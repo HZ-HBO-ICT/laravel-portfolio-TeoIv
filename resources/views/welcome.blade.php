@@ -21,10 +21,10 @@
         <div class="max-width">
             <div class="name"><a href="profile">Teodor <span>Ivanov</span></a></div>
             <ul class="nav">
-                <li><a class="active" href="index">Home</a></li>
+                <li><a class="active" href="/">Home</a></li>
                 <li><a href="profile">Profile</a></li>
                 <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="blogmain">Blog</a></li>
+                <li><a href="blog">Blog</a></li>
                 <li><a href="faq">FAQ</a></li>
                 <li><a href="gallery">Gallery</a></li>
             </ul>

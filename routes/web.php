@@ -39,10 +39,10 @@ Route::get('/', [WelcomeController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'show']);
 
-Route::get('/', [DashboardController::class, 'show']);
+Route::get('/dashboard', [DashboardController::class, 'show']);
 
-Route::get('/', [BlogController::class, 'show']);
+Route::get('/blog', [BlogController::class, 'show']);
 
-Route::get('/', [FAQController::class, 'show']);
+Route::get('/faq', [FAQController::class, 'show']);
 
-Route::get('/', [GalleryController::class, 'show']);
+Route::get('/gallery', [GalleryController::class, 'show']);

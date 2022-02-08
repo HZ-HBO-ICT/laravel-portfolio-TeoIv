@@ -17,12 +17,12 @@
     <div class="container">
         <nav class="navbar">
             <div class="max-width">
-                <div class="name"><a href="welcome">Teodor <span>Ivanov</span></a></div>
+                <div class="name"><a href="/">Teodor <span>Ivanov</span></a></div>
                 <ul class="nav">
-                    <li><a href="welcome">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="../../" class="active">Profile</a></li>
                     <li><a href="dashboard">Dashboard</a></li>
-                    <li><a href="blogmain">Blog</a></li>
+                    <li><a href="blog">Blog</a></li>
                     <li><a href="faq">FAQ</a></li>
                     <li><a href="gallery">Gallery</a></li>
                 </ul>
