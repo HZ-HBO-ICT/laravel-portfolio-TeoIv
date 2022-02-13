@@ -51,7 +51,7 @@
                 </th>
             </tr>
             <tr class="taken">
-                <th rowspan="7" style="background-color: silver;">1</th>
+                <th class="taken" rowspan="7">1</th>
                 <th></th>
                 <th>Who am I</th>
                 <th>0</th>
@@ -86,27 +86,27 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr>
+            <tr class="taken">
                 <th>IT Personality Projectweek 1</th>
                 <th rowspan="2">Report</th>
                 <th rowspan="2">1.25</th>
-                <th rowspan="2"></th>
-                <th rowspan="2"></th>
+                <th rowspan="2">1.25</th>
+                <th rowspan="2">8</th>
             </tr>
-            <tr>
+            <tr class="taken">
                 <th>IT Personality 1</th>
             </tr>
-            <tr>
+            <tr class="taken">
                 <th rowspan="2">2</th>
                 <th rowspan="2">Object-oriented programming</th>
                 <th>Project</th>
                 <th rowspan="2">10</th>
-                <th rowspan="2"></th>
-                <th></th>
+                <th rowspan="2">10</th>
+                <th>7.5</th>
             </tr>
-            <tr>
+            <tr class="taken">
                 <th>Case study</th>
-                <th></th>
+                <th>9.5</th>
             </tr>
             <tr>
                 <th rowspan="4">3</th>
@@ -132,7 +132,7 @@
                 <th></th>
             </tr>
             <tr>
-                <th rowspan="6">4</th>
+                <th rowspan="5">4</th>
                 <th rowspan="3">Framework project 2</th>
                 <th>Portfolio</th>
                 <th rowspan="3">10</th>
@@ -158,6 +158,11 @@
             <tr>
                 <th>IT Personality 2 </th>
             </tr>
+            <tr class="taken">
+                <th colspan="4">TOTAL</th>
+                <th>Total Credits obtained: 23.75</th>
+                <th>Average Grade: 9.00</th>
+            </tr>
             </tbody>
             <tfoot></tfoot>
         </table>
@@ -167,14 +172,13 @@
         <p>This table shows which courses and exams I will attend this first year in the HZ university.</p>
     </div>
     <div class="updated">
-        <h5>Updated on: 18.11.2021 18:09</h5>
+        <h5>Updated on: 13.02.2022 14:44</h5>
     </div>
     <div id="chartinfo">
         <img src="img/hzbestone1.png" class="hzlogodash" alt="">
         <p>The line chart on the right displays the relationship between Credits and the NBSA Boundary. The minimum of credits for continuing to the second year of education in the ICT programme is 45, otherwise the <span>NBSA</span> zone begins.</p>
     </div>
     <div id="curvechart"></div>
-    <script type="text/javascript"></script>
     <script src="js/animation.js"></script>
 </div>
 
