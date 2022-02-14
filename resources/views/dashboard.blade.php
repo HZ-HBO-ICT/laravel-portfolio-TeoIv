@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
+@section('dashboard-content')
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 </head>
-
 <body>
 <div class="containerdashboard">
-    <!-- Navigation bar and name on top left corner on all pages-->
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="name"><a href="/">Teodor <span>Ivanov</span></a></div>
-            <ul class="nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="profile">Profile</a></li>
-                <li><a href="dashboard" class="active">Dashboard</a></li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="faq">FAQ</a></li>
-                <li><a href="gallery">Gallery</a></li>
-            </ul>
-        </div>
-    </nav>
     <div class="backgroundfade"></div>
     <div class="dashboardtable">
         <table class="dashboardtable">
@@ -179,9 +158,7 @@
         <p>The line chart on the right displays the relationship between Credits and the NBSA Boundary. The minimum of credits for continuing to the second year of education in the ICT programme is 45, otherwise the <span>NBSA</span> zone begins.</p>
     </div>
     <div id="curvechart"></div>
-    <script src="js/animation.js"></script>
 </div>
 
 </body>
-
-</html>
+@endsection

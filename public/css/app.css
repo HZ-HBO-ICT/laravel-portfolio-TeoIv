@@ -23,7 +23,7 @@ html {
     height: 100vh;
     color: #f7f7f7;
     min-height: 500px;
-    background: url(../img/croped.gif) no-repeat fixed center;
+    background:url(../images/croped.gif?739375c6e1bc0ee7434113c5e1f3412e) no-repeat fixed center;
 }
 
 
@@ -91,7 +91,7 @@ html {
 
 .active {
     background-color: #3CB371;
-    padding: 12px 14px;
+    padding: 4px 4px 4px 4px
 }
 
 
@@ -147,7 +147,90 @@ html {
     color: black;
 }
 
-/* Home Page styiling */
+.maincontentfaq {
+    grid-column: 3/12;
+    grid-row: 5/14;
+    font-size: 5px;
+    line-height: 1.4;
+}
+
+.maincontentfaq section {
+    background: #2d2f31;
+    opacity: 0.7;
+    color: white;
+    margin: auto;
+}
+
+.maincontentfaq h2 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.maincontentfaq details[open] summary~* {
+    -webkit-animation: open 0.5s ease-in-out;
+            animation: open 0.5s ease-in-out;
+}
+
+@-webkit-keyframes open {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.maincontentfaq details summary::-webkit-details-marker {
+    display: none;
+}
+
+.maincontentfaq details summary {
+    padding: 10px;
+    border: 1px solid #3CB371;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    list-style: none;
+    outline: 0;
+}
+
+.maincontentfaq details summary:after {
+    content: "+";
+    color: white;
+    position: absolute;
+    margin-top: -25px;
+    font-size: 60px;
+    line-height: 0;
+    right: 0;
+    font-weight: 200;
+    transform-origin: center;
+    transition: 0.5s ease-in-out;
+}
+
+.maincontentfaq details[open] summary:after {
+    transition: 1s ease-in-out;
+    transform: rotate(45deg);
+    font-size: 60px;
+}
+
+.maincontentfaq details p {
+    font-size: 20px;
+    margin: 0 0 5px;
+    padding: 15px 15px;
+}
+
+
+/* Home Page styling */
 
 
 /* BACKGROUND */
@@ -167,7 +250,7 @@ html {
     height: 100vh;
     width: 100%;
     position: fixed;
-    background: url(../img/whitelogo2.png) center;
+    background: url(../images/whitelogo2.png?9b3bcd64778e71eafa27b4f794a98585) center;
     background-size: cover;
     z-index: -2;
 }
@@ -289,7 +372,7 @@ html {
     grid-column: 10/15;
     grid-row: 15/28;
     border-style: inset;
-    box-shadow: 0px 0px 15px 2px black;
+    box-shadow: 0 0 15px 2px black;
     display: inline-block;
     width: 310px;
     height: 90px;
@@ -413,7 +496,6 @@ html {
 .blogtext-3 {
     padding-left: 50px;
     font-size: 40px;
-    margin-left: 20px;
     padding-top: 20px;
     margin-left: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -539,11 +621,13 @@ html {
     float: left;
     height: 100vh;
     min-height: 500px;
-    background: url(../img/blog-main.jpg) no-repeat fixed center;
+    background: url(../images/blog-main.jpg?7f183d20d041e70cc5962c60c1ee6b61) no-repeat fixed center;
 }
 
 .article {
     float: left;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     margin-top: 10%;
     margin-left: 1%;
@@ -574,6 +658,8 @@ h4 {
     padding: 10px;
     margin-left: 30px;
     background-color: #3CB371;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
@@ -604,7 +690,7 @@ h4 {
     width: 700px;
     background-color: rgb(70, 66, 66);
     background-size: contain;
-    box-shadow: 0px 0px 15px 1px rgb(70, 66, 66);
+    box-shadow: 0 0 15px 1px rgb(70, 66, 66);
 }
 
 .dashboardtable .dashboardtable th {
@@ -643,7 +729,7 @@ h4 {
     grid-column: 8/20;
     grid-row: 10/13;
     z-index: 2;
-    box-shadow: 0px 0px 10px 3px rgb(70, 66, 66);
+    box-shadow: 0 0 10px 3px rgb(70, 66, 66);
     border-color: rgb(85, 85, 85);
     border-style: solid;
 }
@@ -683,7 +769,7 @@ h4 {
     height: 100vh;
     width: 100%;
     position: fixed;
-    background: url(../img/croped.gif) center;
+    background: url(../images/croped.gif?739375c6e1bc0ee7434113c5e1f3412e) center;
     background-size: cover;
     z-index: -2;
 }
@@ -707,7 +793,7 @@ h4 {
 .profilephoto img {
     width: 200px;
     height: 200px;
-    box-shadow: 0px 0px 10px 3px black;
+    box-shadow: 0 0 10px 3px black;
     border-radius: 50%;
     z-index: -1;
     overflow: hidden;
@@ -881,7 +967,7 @@ h4 {
 
 .photosection ul li div {
     border: rgb(85, 85, 85) thin groove;
-    box-shadow: 0px 0px 10px 4px rgb(85, 85, 85);
+    box-shadow: 0 0 10px 4px rgb(85, 85, 85);
 }
 
 @media screen and (max-width: 640px) {

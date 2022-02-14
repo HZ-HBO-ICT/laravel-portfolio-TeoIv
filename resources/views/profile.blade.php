@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
+
+@section('profile-content')
 
 <head>
     <title>Profile</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
     <script src="https://fonts.googleapis.com/css?family=Open+Sans:400,800"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <!-- Navigation bar and name on top left corner on all pages-->
     <div class="container">
-        <nav class="navbar">
-            <div class="max-width">
-                <div class="name"><a href="/">Teodor <span>Ivanov</span></a></div>
-                <ul class="nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="../../" class="active">Profile</a></li>
-                    <li><a href="dashboard">Dashboard</a></li>
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="faq">FAQ</a></li>
-                    <li><a href="gallery">Gallery</a></li>
-                </ul>
-            </div>
-        </nav>
         <div class="img"></div>
         <div class="backgroundfade"></div>
         <div class="profilephoto">
@@ -97,9 +79,7 @@
     </div>
     </div>
 
-    <script src="js/animation.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
-</html>
+@endsection

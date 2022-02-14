@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
+@section('gallery-content')
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -14,20 +10,6 @@
 
 <body>
 <div>
-    <!-- Navigation bar and name on top left corner on all pages-->
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="name"><a href="/">Teodor <span>Ivanov</span></a></div>
-            <ul class="nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="">Profile</a></li>
-                <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="faq">FAQ</a></li>
-                <li><a href="gallery" class="active">Gallery</a></li>
-            </ul>
-        </div>
-    </nav>
     <div class="backgroundfade"></div>
     <div class="photosection">
         <ul>
@@ -174,10 +156,8 @@
         </ul>
     </div>
 </div>
-<script src="js/animation.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </div>
 </body>
-
-</html>
+@endsection
