@@ -4,7 +4,6 @@
 <head>
     <title>Frequently Asked Questions</title>
 </head>
-
 <body>
 <div class="container">
     <div class="img"></div>
@@ -13,11 +12,17 @@
         <p> <span> F</span>requently <span>A</span>sked <span>Q</span>uestons</p>
     </div>
     <div class="maincontentfaq">
-        <ul style="font-size: 25px">
+        <section>
             @foreach($faqs as $faq)
-                <li style="color: white">{{ $faq->question }}</li>
+                <details style="color: white">
+                    <summary>
+                        {{ $faq->question }}
+                    </summary>
+                    <p>{{$faq->answer}}</p>
+                </details>
+
             @endforeach
-        </ul>
+        </section>
     </div>
     <div class="asidemenu">
         <section>

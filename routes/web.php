@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
@@ -34,3 +35,14 @@ Route::get('/blog', [BlogController::class, 'show']);
 //Route::get('/faq', [FAQController::class, 'show']);
 
 Route::get('/gallery', [GalleryController::class, 'show']);
+
+Route::get('/profile', function () {
+    return view('profile', [
+        'articles' => App\Models\Article::take(3)->latest()->get()
+    ]);
+});
+
+Route::get('/blog', [ArticleController::class, 'index']);
+Route::get('/blog/{article}', [ArticleController::class, 'show']);
+
+Route::get('/profile/{article}', [ArticleController::class, 'show']);

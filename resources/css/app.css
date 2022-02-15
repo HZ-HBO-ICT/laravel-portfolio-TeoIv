@@ -69,6 +69,7 @@ html {
 
 .navbar .nav li {
     list-style: none;
+    padding: 15px 15px;
     display: inline-block;
 }
 
@@ -76,7 +77,6 @@ html {
     color: #f7f7f7;
     font-size: 18px;
     font-weight: 500;
-    margin-left: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: color 0.3s ease;
 }
@@ -86,7 +86,7 @@ html {
 }
 
 .navbar .nav .active:hover {
-    color: black;
+    color: rgb(85, 85, 85);
 }
 
 .active {
@@ -198,7 +198,7 @@ html {
     content: "+";
     color: white;
     position: absolute;
-    margin-top: -25px;
+    margin-top: 7px;
     font-size: 60px;
     line-height: 0;
     right: 0;
@@ -502,32 +502,8 @@ html {
 
 /* Blog posters and main page collumns styiling */
 
-.leftcol {
-    grid-column: 1/8;
-    grid-row: 5/13;
-}
-
-.leftcol ul {
-    padding-top: 10px;
-    background: #2d2f31;
-    opacity: 0.9;
-    color: white;
-    border-radius: 10%;
-    padding-bottom: 15px;
-}
-
-.leftcol ul a {
-    background: #2d2f31;
-    opacity: 0.7;
-    color: white;
-}
-
-.leftcol ul a:hover {
-    color: rgb(107, 185, 99);
-}
-
 .midcol {
-    grid-column: 8/24;
+    grid-column: 3/19;
     grid-row: 4/56;
     background: #2d2f31;
     margin-left: 10px;
@@ -567,7 +543,7 @@ html {
 }
 
 .rightcol {
-    grid-column: 24/31;
+    grid-column: 21/28;
     grid-row: 5/14;
 }
 
@@ -611,7 +587,7 @@ html {
     float: left;
     height: 100vh;
     min-height: 500px;
-    background: url(../../public/img/blog-main.jpg) no-repeat fixed center;
+    background: url(../../public/img/blog-main2.png) no-repeat fixed center;
 }
 
 .article {
@@ -767,6 +743,11 @@ h4 {
     position: fixed;
     background: linear-gradient(to bottom, #3CB371, rgb(70, 66, 66));
     z-index: -2;
+}
+
+.articles_sidebar {
+    grid-column: 1/4;
+    grid-row:6/11;
 }
 
 .profilephoto {

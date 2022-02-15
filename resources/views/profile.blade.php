@@ -7,11 +7,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
     <script src="https://fonts.googleapis.com/css?family=Open+Sans:400,800"></script>
 </head>
+<style>
+    .articles_sidebar {
+        grid-column: 1/4;
+        grid-row:3/8;
+        color: white;
+        background: #2d2f31;
+        opacity: 0.9;
+    }
+    .articles_sidebar li{
+        color: #3CB371;
+        margin-top: 10px;
+    }
+    .articles_sidebar li a {
+        color: #cbd5e0;
+    }
+</style>
 
 <body>
     <div class="container">
         <div class="img"></div>
         <div class="backgroundfade"></div>
+        <div class="articles_sidebar">
+            <ul>
+                @foreach($articles as $article)
+                <li>
+                    <h3><a href="/profile/{{$article->id}}">{{$article->title}}</a></h3>
+                    <p>{{$article->first_lines}}</p>
+                </li>
+                @endforeach
+            </ul>
+        </div>
         <div class="profilephoto">
             <img src="img/circleteo.png" alt="">
         </div>
@@ -35,9 +61,8 @@
                     <li>73. High School Vladislav Gramatik</li>
                     <li>Web-Development course</li>
                     <li> Language lessons in:</li>
-                    <p></p>
-                    <p> | German <img class="flag" src="assets/photos/deu.svg" alt=""> | English <img class="flag" src="assets/photos/gbr.svg" alt=""> | Russian <img class="flag" src="assets/photos/rus.svg" alt=""> | Bulgarian /Native/
-                        <img class="flag" src="assets/photos/bgr.svg" alt=""></p>
+                    <li><p> | German <img class="flag" src="img/deu.svg" alt=""> | English <img class="flag" src="img/gbr.svg" alt=""> | Russian <img class="flag" src="img/rus.svg" alt=""> | Bulgarian /Native/
+                        <img class="flag" src="img/bgr.svg" alt=""></p>
                     </li>
                 </ul>
             </div>
@@ -68,7 +93,7 @@
         </div>
         <div class="roundbutton" id="bubble6">
             <figure class="icon">
-                <a href="gallery.html">
+                <a href="gallery">
                     <ion-icon name="images-outline" size="large"></ion-icon>
                 </a>
             </figure>

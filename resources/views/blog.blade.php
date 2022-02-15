@@ -9,70 +9,28 @@
     <div class="blogheader">
         <p> <span> W</span>elcome to my <span>B</span>log</p>
     </div>
-    <div class="leftcol">
-        <ul class="bloglist">
-            <h2>Personality related articles</h2>
-            <li><a href="pages/blogpages/studychoice.html" target="_blank">Study choice</a> </li>
-            <li><a href="pages/blogpages/personalswot.html" target="_blank">Personal SWOT analysis</a></li>
-            <li><a href="pages/blogpages/itexperience.html" target="_blank">Programming experience</a></li>
-            <li><a href="pages/blogpages/firstfeedback.html" target="_blank">My first feedback</a></li>
-            <h2>ICT related articles</h2>
-            <li><a href="pages/blogpages/ictimportance.html" target="_blank">The importance of ICT</a></li>
-            <li><a href="pages/blogpages/htmltags.html" target="_blank">The Battle of The HTML Tags
-                    Article vs Section</a></li>
-        </ul>
-    </div>
     <div class="midcol">
-        <div id="post1">
-            <h2>Study Choice</h2>
-            <h5>Sep 11,2021</h5>
-            <a href="pages/blogpages/studychoice.html" target="_blank"><img src="img/studychoice.jpeg" alt=""></a>
-            <p>Since high school I am digging into programming, started off with data bases, then UX design studies and finally I started a Web-Development course to expand my.... <a href="../blogpages/studychoice.html" target="_blank">Read more</a></p>
-        </div>
-        <div class="post">
-            <h2>Personal SWOT Analysis</h2>
-            <h5>Sep 11, 2021</h5>
-            <a href="pages/blogpages/personalswot.html" target="_blank"><img src="img/swot2.jpeg" alt=""></a>
-            <p>In this article I will try to answer the following questions: What do you do best? What are your....
-                <a href="pages/blogpages/personalswot.html" target="_blank">Read more</a></p>
-        </div>
-        <div class="post">
-            <h2>My Programming Experience</h2>
-            <h5>Sep 10, 2021</h5>
-            <a href="pages/blogpages/itexperience.html" target="_blank"><img src="img/itexp.jpeg" alt=""></a>
-            <p>Ever since I was 15, I have always been fascinated by how games are made and what goes behind the development of a software. Mathematics has always been....<a href="../blogpages/itexperience.html" target="_blank">Read
-                    more</a></p>
-        </div>
-        <div class="post">
-            <h2>My First Feedback</h2>
-            <h5>Sep 9, 2021</h5>
-            <a href="pages/blogpages/firstfeedback.html" target="_blank"><img src="img/feedback.png" alt=""></a>
-            <p>Let’s go back to the fourth of march right after I submitted the Who am I assignment I was very curious about the response I would get. Naturally I was....<a href="../blogpages/firstfeedback.html" target="_blank">Read
-                    more</a></p>
-        </div>
-        <div class="post">
-            <h2>The Importance of ICT</h2>
-            <h5>Sep 8, 2021</h5>
-            <a href="pages/blogpages/ictimportance.html" target="_blank"><img src="img/ict.png" alt=""></a>
-            <p>Information and Communication Technology (ICT) is a blanket term encompassing all the technologies and services involved in....<a href="../blogpages/ictimportance.html" target="_blank">Read more</a></p>
-        </div>
-        <div class="post">
-            <h2>The Battle of the HTML tags</h2>
-            <h2>Article vs Section</h2>
-            <h5>Sep 7, 2021</h5>
-            <a href="pages/blogpages/htmltags.html" target="_blank"><img src="img/tags.jpg" alt=""></a>
-            <p>The different opinions on this topic led me on a journey to find wether the Article or the Section tag is “bigger” in an HTML structure. As I discovered the discussion is.... <a href="../blogpages/htmltags.html" target="_blank">Read more</a></p>
-        </div>
+        @foreach($articles as $article)
+            <div class="post">
+                <h2>
+                    <a href="/profile/{{$article->id}}">{{$article->title}}</a>
+                </h2>
+                <p>
+                    <img src="{{$article->file_path}}">
+                </p>
+                <p>{{$article->first_lines}}</p>
+            </div>
+        @endforeach
     </div>
     <div class="rightcol">
         <div class="blogautor">
             <h2>About the autor</h2>
             <h5> Sep 07, 2021</h5>
-            <a href="welcome"><img src="img/blogimage.jpg" class="blogimage" alt=""></a>
+            <a href="profile"><img src="img/blogimage.jpg" class="blogimage" alt=""></a>
             <p>I am 21 years old and I am new to</p>
             <p> programming, but I love learning</p>
             <p> new things every day.</p>
-            <a href="welcome" target="_blank" class="moreabout"> -- More about the autor --</a>
+            <a href="profile" target="_blank" class="moreabout"> -- More about the autor --</a>
         </div>
     </div>
     <div class="backgroundfade"></div>
