@@ -63,5 +63,4 @@ class FAQController
     public function delete()
     {
     }
-
 }
