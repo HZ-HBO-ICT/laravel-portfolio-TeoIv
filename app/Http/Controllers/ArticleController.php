@@ -28,4 +28,53 @@ class ArticleController extends Controller
 
         return view('articles.article_layout', ['article' => $article]);
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function create()
+    {
+        return view('articles.create');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store()
+    {
+        $article = new Article();
+
+        $article->title = request('title');
+        $article->file_path = request('file_path');
+        $article->first_lines = request('first_lines');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/blog');
+    }
+
+    /**
+     * @return void
+     */
+    public function edit()
+    {
+
+    }
+
+    /**
+     * @return void
+     */
+    public function update()
+    {
+
+    }
+
+    /**
+     * @return void
+     */
+    public function delete()
+    {
+
+    }
 }

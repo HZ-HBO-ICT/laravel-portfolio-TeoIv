@@ -22,6 +22,9 @@ use App\Http\Controllers\GalleryController;
 |
 */
 
+Route::post('/faq', [FAQController::class,'store']);
+Route::get('/faq/create', [FAQController::class, 'create']);
+
 Route::get('/faq', [FAQController::class, 'show']);
 
 Route::get('/', [WelcomeController::class, 'show']);
@@ -43,6 +46,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('/blog', [ArticleController::class, 'index']);
-Route::get('/blog/{article}', [ArticleController::class, 'show']);
-
+Route::post('/blog', [ArticleController::class,'store']);
+Route::get('/blog/create', [ArticleController::class, 'create']);
 Route::get('/profile/{article}', [ArticleController::class, 'show']);
+Route::get('/blog/{article}', [ArticleController::class, 'show']);

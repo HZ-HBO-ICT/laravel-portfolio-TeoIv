@@ -24,6 +24,9 @@
             @endforeach
         </section>
     </div>
+    <div class="new_faq">
+        <a href="/faq/create">CREATE A NEW FAQ</a>
+    </div>
     <div class="asidemenu">
         <section>
             <aside>

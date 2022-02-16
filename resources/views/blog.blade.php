@@ -22,7 +22,12 @@
             </div>
         @endforeach
     </div>
-    <div class="rightcol">
+    <div class="rightcol1">
+        <div class="crate_new_article">
+            <a href="/blog/create">WRITE A NEW ARTICLE</a>
+        </div>
+    </div>
+    <div class="rightcol2">
         <div class="blogautor">
             <h2>About the autor</h2>
             <h5> Sep 07, 2021</h5>
@@ -30,7 +35,6 @@
             <p>I am 21 years old and I am new to</p>
             <p> programming, but I love learning</p>
             <p> new things every day.</p>
-            <a href="profile" target="_blank" class="moreabout"> -- More about the autor --</a>
         </div>
     </div>
     <div class="backgroundfade"></div>
