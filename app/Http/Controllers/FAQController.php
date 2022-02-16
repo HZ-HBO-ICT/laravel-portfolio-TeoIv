@@ -48,7 +48,6 @@ class FAQController
      */
     public function edit()
     {
-
     }
 
     /**
@@ -56,7 +55,6 @@ class FAQController
      */
     public function update()
     {
-
     }
 
     /**
@@ -64,7 +62,6 @@ class FAQController
      */
     public function delete()
     {
-
     }
 
 }
