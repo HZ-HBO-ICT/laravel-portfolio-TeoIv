@@ -33,6 +33,9 @@
     <h2>{{$article->title}}</h2>
     <h4>By Teodor Ivanov</h4>
     <h5>Sep 11, 2021</h5>
+    <br>
+    <a href="/blog/{{$article->id}}/edit"><h5>Edit the Article</h5></a>
+    <br>
     <section>
         <p>{{ $article->body }}</p>
     </section>

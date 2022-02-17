@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -26,7 +27,9 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
 
-        return view('articles.article_layout', ['article' => $article]);
+        return view('articles.article_layout', [
+            'article' => $article
+        ]);
     }
 
     /**
@@ -55,23 +58,39 @@ class ArticleController extends Controller
     }
 
     /**
-     * @return void
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit()
+    public function edit($id)
     {
+        $article = Article::find($id);
+        return view('articles.update', ['article' => $article]);
+    }
+
+    public function update($id)
+    {
+        $article = Article::find($id);
+
+        $article->title = request('title');
+        $article->file_path = request('file_path');
+        $article->first_lines = request('first_lines');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/blog');
     }
 
     /**
-     * @return void
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update()
+    public function delete($id)
     {
-    }
+        $article = Article::find($id);
 
-    /**
-     * @return void
-     */
-    public function delete()
-    {
+        $article->delete();
+
+        return redirect('/blog');
     }
 }

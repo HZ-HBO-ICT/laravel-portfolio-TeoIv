@@ -5,6 +5,17 @@
     <title>Frequently Asked Questions</title>
 </head>
 <body>
+<style>
+    .maincontentfaq section details a {
+        color: white;
+        font-size: 20px;
+    }
+    .maincontentfaq section details a:hover {
+        transition: 1s;
+        color: #3CB371;
+    }
+
+</style>
 <div class="container">
     <div class="img"></div>
     <div class="backgroundfade"></div>
@@ -19,7 +30,10 @@
                         {{ $faq->question }}
                     </summary>
                     <p>{{$faq->answer}}</p>
+                    <a href="/faq/{{$faq->id}}/edit"><h5>Edit the FAQ</h5></a>
+                    <br>
                 </details>
+
 
             @endforeach
         </section>

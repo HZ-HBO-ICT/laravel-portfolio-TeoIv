@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class FAQController
 {
+
+    public function index()
+    {
+        $faqs = Faq::latest()->get();
+
+        return view('faq', ['faq' =>$faqs]);
+    }
+
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -44,23 +52,42 @@ class FAQController
     }
 
     /**
-     * @return void
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit()
+    public function edit($id)
     {
+        $faqs = Faq::find($id);
+        return view('updatefaq', ['faq' => $faqs]);
     }
 
     /**
-     * @return void
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update()
+    public function update($id)
     {
+        $faq = Faq::find($id);
+
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+
+        $faq->save();
+
+        return redirect('/faq');
     }
 
+
     /**
-     * @return void
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete()
+    public function delete($id)
     {
+        $faq = Faq::find($id);
+
+        $faq->delete();
+
+        return redirect('/faq');
     }
 }
