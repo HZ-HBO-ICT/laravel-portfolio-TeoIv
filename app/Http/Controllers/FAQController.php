@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\DB;
 class FAQController
 {
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $faqs = Faq::latest()->get();
