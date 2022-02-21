@@ -1,12 +1,11 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\GalleryController;
 
@@ -23,12 +22,13 @@ use App\Http\Controllers\GalleryController;
 */
 
 //The following routes should be refactored
-Route::post('/faq', [FAQController::class,'store']);
-Route::get('/faq/create', [FAQController::class, 'create']);
-Route::get('/faq/{faq}/edit', [FAQController::class, 'edit']);
-Route::put('faq/{faq}', [FAQController::class, 'update']);
-Route::get('/faq', [FAQController::class, 'show']);
-Route::delete('faq/{faq}', [FAQController::class, 'delete']);
+//Route::post('/faq', [FAQController::class,'store']);
+//Route::get('/faq/create', [FAQController::class, 'create']);
+//Route::get('/faq/{faq}/edit', [FAQController::class, 'edit']);
+//Route::put('faq/{faq}', [FAQController::class, 'update']);
+//Route::get('/faq', [FAQController::class, 'show']);
+//Route::get('/faq', [FAQController::class, 'index']);
+//Route::delete('faq/{faq}', [FAQController::class, 'delete']);
 
 
 Route::get('/', [WelcomeController::class, 'show']);
@@ -36,7 +36,7 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/gallery', [GalleryController::class, 'show']);
 
 
-Route::get('/profile/{article}', [ArticleController::class, 'show']);
+Route::get('/profile/{article}', [BlogController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/profile', function () {
     return view('profile', [
@@ -44,14 +44,13 @@ Route::get('/profile', function () {
     ]);
 });
 
-//Route::get('/blog', [BlogController::class, 'show']);
-//Route::get('/blog', [ArticleController::class, 'index']);
-//Route::post('/blog', [ArticleController::class,'store']);
-//Route::get('/blog/create', [ArticleController::class, 'create']);
-//Route::get('/blog/{article}', [ArticleController::class, 'show']);
-//Route::get('blog/{article}/edit', [ArticleController::class, 'edit']);
-//Route::put('blog/{article}', [ArticleController::class, 'update']);
-//Route::delete('blog/{article}/edit', [ArticleController::class, 'delete']);
+//Route::get('/blog', [BlogController::class, 'index']);
+//Route::post('/blog', [BlogController::class,'store']);
+//Route::get('/blog/create', [BlogController::class, 'create']);
+//Route::get('/blog/{article}', [BlogController::class, 'show']);
+//Route::get('blog/{article}/edit', [BlogController::class, 'edit']);
+//Route::put('blog/{article}', [BlogController::class, 'update']);
+//Route::delete('blog/{article}/edit', [BlogController::class, 'destroy']);
 
-Route::resource('/blog', ArticleController::class);
-//Route::resource('/faq', FAQController::class);
+Route::resource('/blog', BlogController::class);
+Route::resource('/faq', FAQController::class);

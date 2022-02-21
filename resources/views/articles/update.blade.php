@@ -43,7 +43,7 @@
                     <button class="submit-button" type="submit">Submit</button>
                 </div>
             </form>
-            <form method="POST" action="/blog/{{ $article->id }}/edit">
+            <form method="POST" action="/blog/{{ $article->id }}">
                 @csrf
                 @method('DELETE')
                 <h5>If you want to delete the whole Article press 'Submit'</h5>

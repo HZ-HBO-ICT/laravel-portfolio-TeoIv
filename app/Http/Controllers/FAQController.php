@@ -24,10 +24,10 @@ class FAQController
      */
     public function show()
     {
-        $faqs = Faq::all();
+        $faq = Faq::all();
 
         return view('faq', [
-            'faqs' => $faqs
+            'faqs' => $faq
         ]);
     }
 
@@ -60,8 +60,8 @@ class FAQController
      */
     public function edit($id)
     {
-        $faqs = Faq::find($id);
-        return view('updatefaq', ['faq' => $faqs]);
+        $faq = Faq::find($id);
+        return view('updatefaq', ['faq' => $faq]);
     }
 
     /**
@@ -85,7 +85,7 @@ class FAQController
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function delete($id)
+    public function destroy($id)
     {
         $faq = Faq::find($id);
 

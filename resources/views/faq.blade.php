@@ -24,7 +24,7 @@
     </div>
     <div class="maincontentfaq">
         <section>
-            @foreach($faqs as $faq)
+            @foreach($faq as $faq)
                 <details style="color: white">
                     <summary>
                         {{ $faq->question }}
