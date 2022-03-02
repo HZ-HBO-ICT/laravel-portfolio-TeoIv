@@ -12,6 +12,10 @@ class GradeController extends Controller
 {
     protected $grade;
     protected $course;
+
+    /**
+     *
+     */
     public function __construct()
     {
         $this->grade = new Grade();
@@ -114,6 +118,9 @@ class GradeController extends Controller
         return redirect()->route('grades.index');
     }
 
+    /**
+     * @return array
+     */
     public function validateGrade(): array
     {
         return request()->validate([
@@ -125,6 +132,9 @@ class GradeController extends Controller
         ]);
     }
 
+    /**
+     * @return array
+     */
     public function validateCourse(): array
     {
         return request()->validate([

@@ -11,11 +11,17 @@ class Course extends Model
 
     protected $fillable = ['quartile', 'credits', 'name'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function grades()
     {
         return $this->hasMany(Grade::class);
     }
 
+    /**
+     * @return void
+     */
     public function assignCredits()
     {
         $this->passed_at = now();

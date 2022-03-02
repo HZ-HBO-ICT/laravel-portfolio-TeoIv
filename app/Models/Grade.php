@@ -9,6 +9,9 @@ class Grade extends Model
 {
     use HasFactory;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function course()
     {
         return $this->belongsTo(Course::class);
@@ -16,6 +19,10 @@ class Grade extends Model
 
     protected $fillable = ['course_id', 'exam', 'lowest_passing_grade', 'best_grade'];
 
+    /**
+     * @param $grade
+     * @return void
+     */
     public function addResult($grade)
     {
         if ($grade >= $this->lowest_passing_grade) {
