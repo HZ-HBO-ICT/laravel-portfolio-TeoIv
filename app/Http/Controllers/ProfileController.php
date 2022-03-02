@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ProfileController
+use Illuminate\Http\Request;
+
+class ProfileController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View

@@ -1,16 +1,16 @@
-@extends('layout')
+@extends('common.layout')
 
-@section('home-content')
+@section('body')
     <head>
         <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/css/home.css">
     </head>
     <div class="containerhome">
 <div class="motivating">
     <figure class="iconhome">
         <a href="https://hz.nl/" target="_blank"><img src="img/hz-logosite.svg" alt=""></a>
     </figure>
-    <p>I believe that my place is in the HBO - ICT programme at the HZ University. I decided to start this journey in IT, because I love solving problems and facing new challenges. My abillity to improve has helped me a lot in my life. I think that
-        the HZ is the perfect challenge for young people, willing to push themselves beyond the limits.</p>
+    <p>I believe that my place is in the HBO - ICT programme at the HZ University. I decided to start this journey in IT, because I love solving problems and facing new challenges.</p>
 </div>
 <div class="contact" id="instagram">
     <figure>

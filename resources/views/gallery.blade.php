@@ -1,8 +1,9 @@
-@extends('layout')
+@extends('common.layout')
 
-@section('gallery-content')
+@section('body')
 <head>
     <title>Photo Gallery</title>
+    <link rel="stylesheet" type="text/css" href="/css/gallery.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

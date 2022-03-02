@@ -9,24 +9,21 @@ class Grade extends Model
 {
     use HasFactory;
 
-    /**
-     * @param $grade
-     * @return void
-     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    protected $fillable = ['course_id', 'exam', 'lowest_passing_grade', 'best_grade'];
+
     public function addResult($grade)
     {
-        $this->refresh();
-
-        if ($this->best_grade >= $grade) {
-            return;
+        if ($grade >= $this->lowest_passing_grade) {
+            if (null == $this->best_grade) {
+                $course = Course::find('id', '=', $this->course_id);
+                $course->assignCredits();
+                $this->best_grade = $grade;
+            }
         }
-
-        $this->best_grade = $grade;
-
-        if ($this->best_grade >= $this->lowest_passing_grade) {
-            $this->passed_at = now();
-        }
-
-        $this->save();
     }
 }

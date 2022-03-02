@@ -1,43 +1,18 @@
-@extends('layout')
+@extends('common.layout')
 
-@section('profile-content')
+@section('body')
 
 <head>
     <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/profile.css">
     <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
     <script src="https://fonts.googleapis.com/css?family=Open+Sans:400,800"></script>
 </head>
-<style>
-    .articles_sidebar {
-        grid-column: 1/4;
-        grid-row:3/8;
-        color: white;
-        background: #2d2f31;
-        opacity: 0.9;
-    }
-    .articles_sidebar li{
-        color: #3CB371;
-        margin-top: 10px;
-    }
-    .articles_sidebar li a {
-        color: #cbd5e0;
-    }
-</style>
 
 <body>
     <div class="container">
         <div class="img"></div>
         <div class="backgroundfade"></div>
-        <div class="articles_sidebar">
-            <ul>
-                @foreach($articles as $article)
-                <li>
-                    <h3><a href="/profile/{{$article->id}}">{{$article->title}}</a></h3>
-                    <p>{{$article->first_lines}}</p>
-                </li>
-                @endforeach
-            </ul>
-        </div>
         <div class="profilephoto">
             <img src="img/circleteo.png" alt="">
         </div>
@@ -75,8 +50,8 @@
                 <h4>General Information</h4>
                 <ul>
                     <li>Name: Teodor</li>
-                    <li>Age: 21</li>
                     <li>Nationality: Bulgarian</li>
+                    <li>Age: 21</li>
                 </ul>
             </div>
         </div>

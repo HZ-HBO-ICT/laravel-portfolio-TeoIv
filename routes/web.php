@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\GalleryController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -21,36 +22,11 @@ use App\Http\Controllers\GalleryController;
 |
 */
 
-//The following routes should be refactored
-//Route::post('/faq', [FAQController::class,'store']);
-//Route::get('/faq/create', [FAQController::class, 'create']);
-//Route::get('/faq/{faq}/edit', [FAQController::class, 'edit']);
-//Route::put('faq/{faq}', [FAQController::class, 'update']);
-//Route::get('/faq', [FAQController::class, 'show']);
-//Route::get('/faq', [FAQController::class, 'index']);
-//Route::delete('faq/{faq}', [FAQController::class, 'delete']);
-
-
 Route::get('/', [WelcomeController::class, 'show']);
-Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/gallery', [GalleryController::class, 'show']);
-
-
-Route::get('/profile/{article}', [BlogController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
-Route::get('/profile', function () {
-    return view('profile', [
-        'articles' => App\Models\Article::take(3)->latest()->get()
-    ]);
-});
 
-//Route::get('/blog', [BlogController::class, 'index']);
-//Route::post('/blog', [BlogController::class,'store']);
-//Route::get('/blog/create', [BlogController::class, 'create']);
-//Route::get('/blog/{article}', [BlogController::class, 'show']);
-//Route::get('blog/{article}/edit', [BlogController::class, 'edit']);
-//Route::put('blog/{article}', [BlogController::class, 'update']);
-//Route::delete('blog/{article}/edit', [BlogController::class, 'destroy']);
-
-Route::resource('/blog', BlogController::class);
-Route::resource('/faq', FAQController::class);
+Route::resource('/posts', PostController::class);
+Route::resource('/faqs', FAQController::class);
+Route::resource('/people', PersonController::class);
+Route::resource('/grades', GradeController::class);

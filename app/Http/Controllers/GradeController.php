@@ -2,85 +2,135 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreGradeRequest;
-use App\Http\Requests\UpdateGradeRequest;
+use App\Models\Course;
 use App\Models\Grade;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use League\Flysystem\Exception;
 
 class GradeController extends Controller
 {
+    protected $grade;
+    protected $course;
+    public function __construct()
+    {
+        $this->grade = new Grade();
+        $this->course = new Course();
+    }
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $grades = Grade::all();
+        $grades = DB::table('grades')
+            ->join('courses', 'courses.id', '=', 'grades.course_id')
+            ->select('courses.name', 'courses.credits', 'grades.*')
+            ->get();
+
+        return view('grades.index', compact('grades', 'grades'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('grades.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreGradeRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreGradeRequest $request)
+    public function store(Request $request)
     {
-        //
+        //Grade::create($this->validateGrade());
+        //Course::create($this->validateCourse());
+
+        DB::beginTransaction();
+        try {
+            $grade = $this->grade->create([
+               'exam' => $request->exam,
+               'lowest_passing_grade' => $request->lowest_passing_grade,
+                'best_grade' => $request->best_grade,
+            ]);
+            $course = $this->course->create([
+               'quartile' => $request->quartile,
+               'name' => $request->name,
+               'credits' => $request->credits
+            ]);
+            if ($grade && $course) {
+                DB::commit();
+            }
+            return redirect()->route('grades.index');
+        } catch (Exception $exception) {
+            DB::rollBack();
+            return redirect()->route('grades.index');
+        }
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
+     * @param Grade $grade
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Grade $grade)
     {
-        //
+        return view('grades.show', compact('grade'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
+     * @param Grade $grade
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Grade $grade)
     {
-        //
+        return view('grades.edit', compact('grade'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateGradeRequest  $request
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Grade $grade
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateGradeRequest $request, Grade $grade)
+    public function update(Request $request, Grade $grade)
     {
-        //
+        $grade->update($this->validateGrade());
+        $request->update($this->validateCourse());
+
+        return redirect()->route('grades.index');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
+     * @param Grade $grade
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Grade $grade)
     {
-        //
+        $grade->delete();
+
+
+        return redirect()->route('grades.index');
+    }
+
+    public function validateGrade(): array
+    {
+        return request()->validate([
+            'quartile' => 'required',
+            'course' => 'required',
+            'exam' => 'required',
+            'lowest_passing_grade' => ['required', 'between:0,10'],
+            'best_grade' => ['required', 'between:0,10'],
+        ]);
+    }
+
+    public function validateCourse(): array
+    {
+        return request()->validate([
+            'quartile' => 'required',
+            'name' => 'required',
+            'credits' => 'required',
+        ]);
     }
 }
