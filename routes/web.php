@@ -1,6 +1,15 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FAQController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post!',
-        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-    ];
+Route::get('/', [WelcomeController::class, 'show']);
+Route::get('/gallery', [GalleryController::class, 'show']);
+Route::get('/profile', [ProfileController::class, 'show']);
 
-    if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
-    }
-
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/posts', PostController::class);
+Route::resource('/faqs', FAQController::class);
+Route::resource('/people', PersonController::class);
+Route::resource('/grades', GradeController::class);
