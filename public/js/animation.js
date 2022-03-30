@@ -25,7 +25,7 @@ function drawChart() {
         ['Dec', 12.5, 45],
         ['Jan', 12.5, 45],
         ['Feb', 23.75, 45],
-        ['March', , 45],
+        ['March', 28.75, 45],
         ['April', , 45],
         ['May', , 45],
         ['June', , 45],
