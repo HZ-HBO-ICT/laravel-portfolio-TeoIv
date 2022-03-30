@@ -85,6 +85,7 @@ class PersonController extends Controller
         return request()->validate([
             'name' => 'required',
             'occupation' => 'required',
+            'job_description' => 'required',
         ]);
     }
 }
